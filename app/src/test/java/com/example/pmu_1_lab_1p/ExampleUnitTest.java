@@ -12,6 +12,15 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+        MinMaxFun func = new MinMaxFun();
+        assertEquals(4, func.min(4, 10));
+        assertEquals(-5, func.min(22, -5));
+        assertEquals(0, func.min(15, 0));
+        assertEquals(-10, func.min(0, -10));
+
+        assertEquals(4, func.max(4, 1));
+        assertEquals(10, func.max(-3, 10));
+        assertEquals(-5, func.max(-11, -5));
+        assertEquals(1, func.max(1, 0));
     }
 }
