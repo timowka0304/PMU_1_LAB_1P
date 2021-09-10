@@ -27,12 +27,14 @@ variables:
   ANDROID_SDK_TOOLS: "6514223"
 
 # Packages installation before running script
+
 before_script:
   - apt-get --quiet update --yes
   - apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
 
   # Setup path as android_home for moving/exporting the downloaded sdk into it
-  - export ANDROID_HOME="${PWD}/android-home"
+  - export ANDROID_HOME="/opt/android-sdk"
+  - export JAVA_HOME="/usr/lib/jvm/java-1.7.0-openjdk-amd64"
   # Create a new directory at specified location
   - install -d $ANDROID_HOME
   # Here we are installing androidSDK tools from official source,
